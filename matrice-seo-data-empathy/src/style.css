@@ -1,0 +1,110 @@
+:root{
+    --bg:#0c0c16;
+    --panel:#14141f;
+    --panel-2:#181828;
+    --line:#26263a;
+    --text:#e8e8f0;
+    --muted:#8888aa;
+    --dim:#5c5c78;
+    --teal:#00e5a0;
+    --purple:#7c3aed;
+    --orange:#d85a30;
+    --red:#ff5d6c;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'DM Sans',sans-serif;
+    padding:36px 20px 80px;
+  }
+  .wrap{max-width:1180px;margin:0 auto;}
+
+  header{margin-bottom:34px;}
+  .eyebrow{color:var(--teal);font-size:0.78rem;font-weight:700;letter-spacing:0.02em;margin-bottom:10px;}
+  h1{
+    font-family:'Syne',sans-serif;
+    font-size:2.1rem;
+    font-weight:800;
+    margin:0 0 10px;
+    line-height:1.15;
+  }
+  header p{color:var(--muted);max-width:640px;line-height:1.55;margin:0;font-size:0.95rem;}
+
+  .layout{display:grid;grid-template-columns:1.15fr 0.85fr;gap:22px;margin-bottom:28px;}
+  @media (max-width:920px){.layout{grid-template-columns:1fr;}}
+
+  .panel{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:22px 24px;
+  }
+  .panel h2{
+    font-family:'Syne',sans-serif;
+    font-size:1.05rem;
+    font-weight:700;
+    margin:0 0 4px;
+  }
+  .panel .sub{color:var(--dim);font-size:0.82rem;margin:0 0 16px;}
+
+  /* --- Matrix / scatter --- */
+  #matrixSvg{width:100%;height:auto;display:block;}
+  .quad-label{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;fill:var(--dim);}
+  .axis-label{font-size:11px;fill:var(--dim);font-family:'DM Sans',sans-serif;}
+  .grid-line{stroke:var(--line);stroke-width:1;}
+  .bubble{cursor:pointer;transition:opacity .15s ease;}
+  .bubble:hover{opacity:0.85;}
+  .bubble-label{font-size:10px;fill:var(--text);font-family:'JetBrains Mono',monospace;pointer-events:none;}
+
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px;font-size:0.78rem;color:var(--muted);}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block;}
+
+  /* --- selected page detail panel --- */
+  #detail .placeholder{color:var(--dim);font-size:0.88rem;line-height:1.6;}
+  .score-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:0.86rem;}
+  .score-row:last-child{border-bottom:none;}
+  .score-val{font-family:'JetBrains Mono',monospace;font-weight:600;}
+  .badge{
+    display:inline-block;font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:100px;
+  }
+  .checklist{margin-top:14px;}
+  .checklist label{
+    display:flex;align-items:center;gap:9px;font-size:0.85rem;color:var(--muted);
+    padding:7px 0;cursor:pointer;
+  }
+  .checklist input{accent-color:var(--teal);width:15px;height:15px;flex-shrink:0;}
+  .checklist label.on{color:var(--text);}
+  .action-note{font-size:0.78rem;color:var(--dim);margin-top:10px;line-height:1.5;padding-top:10px;border-top:1px dashed var(--line);}
+
+  /* --- table --- */
+  table{width:100%;border-collapse:collapse;font-size:0.83rem;}
+  thead th{
+    text-align:left;color:var(--dim);font-weight:600;font-size:0.72rem;
+    padding:0 10px 10px;border-bottom:1px solid var(--line);white-space:nowrap;
+  }
+  tbody td{padding:10px;border-bottom:1px solid var(--line);vertical-align:middle;}
+  tbody tr:hover{background:#ffffff06;}
+  tbody tr.active-row{background:#00e5a00f;}
+  .page-name{font-weight:600;color:var(--text);cursor:pointer;max-width:230px;}
+  .page-url{color:var(--dim);font-size:0.72rem;font-family:'JetBrains Mono',monospace;display:block;margin-top:2px;}
+  input.cell{
+    width:64px;background:var(--panel-2);border:1px solid var(--line);color:var(--text);
+    border-radius:6px;padding:6px 7px;font-family:'JetBrains Mono',monospace;font-size:0.78rem;
+  }
+  input.cell:focus{outline:1px solid var(--teal);border-color:var(--teal);}
+  .pill{font-size:0.7rem;font-weight:700;padding:3px 9px;border-radius:100px;white-space:nowrap;}
+  .remove-btn{
+    background:none;border:none;color:var(--dim);cursor:pointer;font-size:1rem;line-height:1;padding:4px;
+  }
+  .remove-btn:hover{color:var(--red);}
+
+  .add-row{
+    margin-top:14px;background:var(--panel-2);border:1px dashed var(--line);color:var(--muted);
+    font-family:'DM Sans',sans-serif;font-size:0.83rem;padding:10px 16px;border-radius:9px;cursor:pointer;width:100%;
+  }
+  .add-row:hover{border-color:var(--teal);color:var(--teal);}
+
+  footer{color:var(--dim);font-size:0.76rem;text-align:center;margin-top:36px;}

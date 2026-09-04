@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matrice SEO × GEO-IA × Performance — DATA-EMPATHY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">MATRICE DE PRIORISATION</div>
+    <h1>SEO × GEO-IA × Performance</h1>
+    <p>Croise le classement Google, la préparation aux moteurs génératifs (ChatGPT, Perplexity, AI Overviews) et la santé technique de chaque page — pour savoir laquelle traiter en premier. Coche les critères GEO-IA, ajuste les Core Web Vitals, la matrice se recalcule en direct.</p>
+  </header>
+
+  <div class="layout">
+    <div class="panel">
+      <h2>Carte des pages</h2>
+      <p class="sub">Axe horizontal : score SEO (position + CTR réels). Axe vertical : score de préparation GEO-IA. Taille de bulle = impressions Google.</p>
+      <svg id="matrixSvg" viewBox="0 0 560 460"></svg>
+      <div class="legend">
+        <span><span class="dot" style="background:#39d979"></span>Performance bonne</span>
+        <span><span class="dot" style="background:#e8b93e"></span>Performance moyenne</span>
+        <span><span class="dot" style="background:#ff5d6c"></span>Performance faible</span>
+      </div>
+    </div>
+
+    <div class="panel" id="detailPanel">
+      <h2>Détail de la page</h2>
+      <p class="sub">Clique une bulle ou une ligne du tableau</p>
+      <div id="detail"><p class="placeholder">Sélectionne une page pour voir son détail de score et sa checklist GEO-IA.</p></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Pages du site</h2>
+    <p class="sub">Données Search Console pré-remplies pour data-empathy.click — modifie ou ajoute des lignes librement.</p>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>Clics</th>
+            <th>Impr.</th>
+            <th>Position</th>
+            <th>LCP (s)</th>
+            <th>CLS</th>
+            <th>INP (ms)</th>
+            <th>Score SEO</th>
+            <th>Score GEO-IA</th>
+            <th>Priorité</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+    <button class="add-row" id="addRowBtn">+ Ajouter une page</button>
+  </div>
+
+  <footer>Formules : Score SEO = position + CTR pondérés · Score GEO-IA = 6 critères de préparation IA générative · Performance = Core Web Vitals (LCP / CLS / INP)</footer>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
