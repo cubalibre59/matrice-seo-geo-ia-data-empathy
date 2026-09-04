@@ -81,10 +81,10 @@ function renderMatrix(){
   s += `<text class="axis-label" x="14" y="${20+plotH/2}" text-anchor="middle" transform="rotate(-90 14 ${20+plotH/2})">Score GEO-IA →</text>`;
 
   // quadrant labels
-  s += `<text class="quad-label" x="${M+10}" y="34">Urgent</text>`;
-  s += `<text class="quad-label" x="${M+plotW-10}" y="34" text-anchor="end">Pousser le SEO</text>`;
-  s += `<text class="quad-label" x="${M+10}" y="${20+plotH-10}">Enrichir GEO-IA</text>`;
-  s += `<text class="quad-label" x="${M+plotW-10}" y="${20+plotH-10}" text-anchor="end">Pilier</text>`;
+   s += `<text class="quad-label" x="${M+10}" y="${20+plotH-10}">Urgent</text>`;
+  s += `<text class="quad-label" x="${M+10}" y="34">Pousser le SEO</text>`;
+  s += `<text class="quad-label" x="${M+plotW-10}" y="${20+plotH-10}" text-anchor="end">Enrichir GEO-IA</text>`;
+  s += `<text class="quad-label" x="${M+plotW-10}" y="34" text-anchor="end">Pilier</text>`;
 
   const maxImpr = Math.max(...pages.map(p=>p.impressions), 1);
 
